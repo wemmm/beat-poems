@@ -9,38 +9,81 @@ class Poem extends Component {
     this.state = {
       poemLineOne: this.randomNumber(),
       poemLineTwo: this.randomNumber(),
-      poemLineThree: this.randomNumber()
+      poemLineThree: this.randomNumber(),
+      lineOneLock: false,
+      lineTwoLock: false,
+      lineThreeLock: false
     }
   }
 
   randomNumber = () => {
-    return Math.floor(Math.random() * (7 - 0)) + 0;
+    return Math.floor(Math.random() * (8 - 0)) + 0;
   }
 
   shuffleLines = () => {
-    this.setState({
-      poemLineOne: this.randomNumber(),
-      poemLineTwo: this.randomNumber(),
-      poemLineThree: this.randomNumber()
-    });
+    this.shuffleLineOne()
+    this.shuffleLineTwo()
+    this.shuffleLineThree()
   }
 
   shuffleLineOne = () => {
-    this.setState({
-      poemLineOne: this.randomNumber()
-    });
+    if (this.state.lineOneLock === false) {
+      this.setState({
+        poemLineOne: this.randomNumber()
+      });
+    }
   }
 
   shuffleLineTwo = () => {
-    this.setState({
-      poemLineTwo: this.randomNumber()
-    });
+    if (this.state.lineTwoLock === false) {
+      this.setState({
+        poemLineTwo: this.randomNumber()
+      });
+    }
   }
 
   shuffleLineThree = () => {
-    this.setState({
-      poemLineThree: this.randomNumber()
-    });
+    if (this.state.lineThreeLock === false) {
+      this.setState({
+        poemLineThree: this.randomNumber()
+      });
+    }
+  }
+
+  lockLineOne = () => {
+    if (this.state.lineOneLock === false) {
+      this.setState({
+        lineOneLock: true
+      });
+    } else {
+      this.setState({
+        lineOneLock: false
+      });
+    }
+  }
+
+  lockLineTwo = () => {
+    if (this.state.lineTwoLock === false) {
+      this.setState({
+        lineTwoLock: true
+      });
+    } else {
+      this.setState({
+        lineTwoLock: false
+      });
+    }
+  }
+
+  lockLineThree = () => {
+    if (this.state.lineOneLock === false) {
+      this.setState({
+        lineThreeLock: true
+      });
+    } else {
+      this.setState({
+        lineThreeLock: false
+      });
+    }
   }
 
   render() {
@@ -49,13 +92,13 @@ class Poem extends Component {
         <p>{this.props.label}</p>
 
         <h2>{lines.line1[this.state.poemLineOne]}</h2><button onClick={this.shuffleLineOne}><TiArrowShuffle/></button>
-        <button><TiLockOpenOutline/></button>
+        <button onClick={this.lockLineOne}><TiLockOpenOutline/></button>
 
         <h2>{lines.line2[this.state.poemLineTwo]}</h2><button onClick={this.shuffleLineTwo}><TiArrowShuffle/></button>
-        <button><TiLockOpenOutline/></button>
+        <button onClick={this.lockLineTwo}><TiLockOpenOutline/></button>
 
         <h2>{lines.line3[this.state.poemLineThree]}</h2><button onClick={this.shuffleLineThree}>< TiArrowShuffle/></button>
-        <button><TiLockOpenOutline/></button><br /><br />
+        <button onClick={this.lockLineThree}><TiLockOpenOutline/></button><br /><br />
 
         <button onClick={this.shuffleLines}>
           <TiStarburstOutline/>
