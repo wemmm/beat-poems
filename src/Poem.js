@@ -6,19 +6,21 @@ class Poem extends Component {
   constructor() {
     super();
     this.state = {
-      poemLineOne: 0,
-      poemLineTwo: 0,
-      poemLineThree: 0
+      poemLineOne: this.randomNumber(),
+      poemLineTwo: this.randomNumber(),
+      poemLineThree: this.randomNumber()
     }
   }
 
   randomNumber = () => {
-    return Math.floor(Math.random() * (3 - 0)) + 0;
+    return Math.floor(Math.random() * (7 - 0)) + 0;
   }
 
   shuffleLines = () => {
     this.setState({
-      poemLineOne: this.randomNumber()
+      poemLineOne: this.randomNumber(),
+      poemLineTwo: this.randomNumber(),
+      poemLineThree: this.randomNumber()
     });
   }
 
@@ -27,8 +29,8 @@ class Poem extends Component {
       <div>
         <p>{this.props.label}</p>
         <h2>{lines.line1[this.state.poemLineOne]}</h2>
-        <h2>{lines.line2[0]}</h2>
-        <h2>{lines.line3[2]}</h2>
+        <h2>{lines.line2[this.state.poemLineTwo]}</h2>
+        <h2>{lines.line3[this.state.poemLineThree]}</h2>
         <input
           type="button"
           onClick={this.shuffleLines}
