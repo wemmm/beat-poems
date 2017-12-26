@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Button, ButtonGroup } from 'react-bootstrap';
-import { TiArrowShuffle, TiRefresh, TiLockOpenOutline, TiLockClosedOutline } from 'react-icons/lib/ti'
+import { Button } from 'react-bootstrap';
+import ShareButton from 'react-social-share-buttons'
+import { TiArrowShuffle, TiRefresh, TiLockClosedOutline } from 'react-icons/lib/ti'
 import lines from './lines.json';
 
 class Poem extends Component {
@@ -27,6 +28,7 @@ class Poem extends Component {
   }
 
   shuffleLineOne = () => {
+    console.log(this.state.lineOneText)
     if (this.state.lineOneLock === false) {
       this.setState({
         poemLineOne: this.randomNumber()
@@ -91,22 +93,31 @@ class Poem extends Component {
       <div>
         <p>{this.props.label}</p>
 
-        <h2 className="line1">{lines.line1[this.state.poemLineOne]}</h2>
-        <Button classname="line-options" onClick={this.shuffleLineOne}><TiArrowShuffle/>Shuffle</Button>
-        <Button classname="line-options" className={(this.state.lineOneLock ? "active" : "")} onClick={this.lockLineOne}><TiLockClosedOutline/>Lock</Button>
+        <h2>{lines.line1[this.state.poemLineOne]}</h2>
+        <Button onClick={this.shuffleLineOne}><TiArrowShuffle/>Shuffle</Button>
+        <Button className={(this.state.lineOneLock ? "active" : "")} onClick={this.lockLineOne}><TiLockClosedOutline/>Lock</Button>
 
-        <h2 className="line2">{lines.line2[this.state.poemLineTwo]}</h2>
-        <Button classname="line-options" onClick={this.shuffleLineTwo}><TiArrowShuffle/>Shuffle</Button>
-        <Button classname="line-options" className={(this.state.lineTwoLock ? "active" : "")} onClick={this.lockLineTwo}><TiLockClosedOutline/>Lock</Button>
+        <h2>{lines.line2[this.state.poemLineTwo]}</h2>
+        <Button onClick={this.shuffleLineTwo}><TiArrowShuffle/>Shuffle</Button>
+        <Button className={(this.state.lineTwoLock ? "active" : "")} onClick={this.lockLineTwo}><TiLockClosedOutline/>Lock</Button>
 
-        <h2 className="line2">{lines.line3[this.state.poemLineThree]}</h2>
-        <Button classname="line-options" onClick={this.shuffleLineThree}>< TiArrowShuffle/>Shuffle</Button>
-        <Button classname="line-options" className={(this.state.lineThreeLock ? "active" : "")} onClick={this.lockLineThree}><TiLockClosedOutline/>Lock</Button><br /><br />
+        <h2>{lines.line3[this.state.poemLineThree]}</h2>
+        <Button onClick={this.shuffleLineThree}>< TiArrowShuffle/>Shuffle</Button>
+        <Button className={(this.state.lineThreeLock ? "active" : "")} onClick={this.lockLineThree}><TiLockClosedOutline/>Lock</Button><br /><br />
 
-        <Button classname="line-options" onClick={this.shuffleLines}>
+        <Button className="shuffleall" onClick={this.shuffleLines}>
           Shuffle All
           <TiRefresh/>
-        </Button>
+        </Button><br/><br/>
+
+        <div className="social">
+          <ShareButton
+                  socialMedia={'twitter'}
+                  compact
+                  url={"lmao"}
+                  text={`${lines.line1[this.state.poemLineOne]}%0A${lines.line2[this.state.poemLineTwo]}%0A${lines.line3[this.state.poemLineThree]}`}
+              />
+        </div>
 
       </div>
   )};

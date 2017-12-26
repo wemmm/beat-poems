@@ -21,10 +21,13 @@ So some of the lines in ```lines.json``` are inspired by [Ginsberg](https://en.w
 * JavaScript (ES6)
 * create-react-app
 * react-icons
+* react-social-share-buttons
 
 ### Structure
 
 The App component renders a header and a Poem component, and the Poem component renders three different Line components that it grabs out of the JSON file. Poems can be reshuffled entirely or line-by-line. The lock buttons will stop a line from changing until the lock is toggled back off.
+
+You can tweet your finished poem with the Twitter button! Impress strangers with your deep and meaningful verse!
 
 ### User Stories
 
