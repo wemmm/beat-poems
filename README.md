@@ -13,14 +13,15 @@ From [The Poetry Foundation](https://www.poetryfoundation.org/learn/glossary-ter
 
 > A national group of poets who emerged from San Francisco’s literary counterculture in the 1950s. Its ranks included Allen Ginsberg, Lawrence Ferlinghetti, Gregory Corso, and Gary Snyder. Poet and essayist Kenneth Rexroth influenced the development of the “Beat” aesthetic, which rejected academic formalism and the materialism and conformity of the American middle class. Beat poetry is largely free verse, often surrealistic, and influenced by the cadences of jazz, as well by Zen and Native American spirituality.
 
-So some of the lines in ```lines.json``` are inspired by Ginsberg, [Whalen](https://www.poetryfoundation.org/poets/philip-whalen), etc. etc. and some of them are weird parodies of my own creation.
+So some of the lines in ```lines.json``` are inspired by [Ginsberg](), [Whalen](https://www.poetryfoundation.org/poets/philip-whalen), [Snyder]() etc. etc. and some of them are weird parodies of my own creation.
 
 ### Tech
 
 * React.js
 * JavaScript (ES6)
 * create-react-app
+* react-icons
 
 ### Structure
 
-The App component renders a header and a Poem component, and the Poem component renders three different Line components that it grabs out of the JSON file. 
+The App component renders a header and a Poem component, and the Poem component renders three different Line components that it grabs out of the JSON file. Poems can be reshuffled entirely or line-by-line. The lock buttons will stop a line from changing until the lock is toggled back off.

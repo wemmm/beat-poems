@@ -92,16 +92,16 @@ class Poem extends Component {
         <p>{this.props.label}</p>
 
         <h2 className="line1">{lines.line1[this.state.poemLineOne]}</h2>
-        <Button className="line-options" onClick={this.shuffleLineOne}><TiArrowShuffle/>Shuffle</Button>
-        <Button className="line-options" onClick={this.lockLineOne}><TiLockClosedOutline/>Lock</Button>
+        <Button onClick={this.shuffleLineOne}><TiArrowShuffle/>Shuffle</Button>
+        <Button className={(this.state.lineOneLock ? "active" : "")} onClick={this.lockLineOne}><TiLockClosedOutline/>Lock</Button>
 
         <h2 className="line2">{lines.line2[this.state.poemLineTwo]}</h2>
-        <Button className="line-options" onClick={this.shuffleLineTwo}><TiArrowShuffle/>Shuffle</Button>
-        <Button className="line-options" onClick={this.lockLineTwo}><TiLockClosedOutline/>Lock</Button>
+        <Button onClick={this.shuffleLineTwo}><TiArrowShuffle/>Shuffle</Button>
+        <Button className={(this.state.lineTwoLock ? "active" : "")} onClick={this.lockLineTwo}><TiLockClosedOutline/>Lock</Button>
 
         <h2 className="line2">{lines.line3[this.state.poemLineThree]}</h2>
-        <Button className="line-options" onClick={this.shuffleLineThree}>< TiArrowShuffle/>Shuffle</Button>
-        <Button className="line-options" onClick={this.lockLineThree}><TiLockClosedOutline/>Lock</Button><br /><br />
+        <Button onClick={this.shuffleLineThree}>< TiArrowShuffle/>Shuffle</Button>
+        <Button className={(this.state.lineThreeLock ? "active" : "")} onClick={this.lockLineThree}><TiLockClosedOutline/>Lock</Button><br /><br />
 
         <Button className="line-options" onClick={this.shuffleLines}>
           Shuffle All
