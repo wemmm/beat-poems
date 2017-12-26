@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { TiArrowShuffle, TiStarburstOutline, TiLockOpenOutline, TiLockClosedOutline } from 'react-icons/lib/ti'
+import { Button, ButtonGroup } from 'react-bootstrap';
+import { TiArrowShuffle, TiRefresh, TiLockOpenOutline, TiLockClosedOutline } from 'react-icons/lib/ti'
 import lines from './lines.json';
-import './Line.css';
 
 class Poem extends Component {
   constructor() {
@@ -17,7 +17,7 @@ class Poem extends Component {
   }
 
   randomNumber = () => {
-    return Math.floor(Math.random() * (10 - 0)) + 0;
+    return Math.floor(Math.random() * (12 - 0)) + 0;
   }
 
   shuffleLines = () => {
@@ -91,18 +91,22 @@ class Poem extends Component {
       <div>
         <p>{this.props.label}</p>
 
-        <h2 className="line1">{lines.line1[this.state.poemLineOne]}</h2><button onClick={this.shuffleLineOne}><TiArrowShuffle/></button>
-        <button onClick={this.lockLineOne}><TiLockOpenOutline/></button>
+        <h2 className="line1">{lines.line1[this.state.poemLineOne]}</h2>
+        <Button className="line-options" onClick={this.shuffleLineOne}><TiArrowShuffle/>Shuffle</Button>
+        <Button className="line-options" onClick={this.lockLineOne}><TiLockClosedOutline/>Lock</Button>
 
-        <h2 className="line2">{lines.line2[this.state.poemLineTwo]}</h2><button onClick={this.shuffleLineTwo}><TiArrowShuffle/></button>
-        <button onClick={this.lockLineTwo}><TiLockOpenOutline/></button>
+        <h2 className="line2">{lines.line2[this.state.poemLineTwo]}</h2>
+        <Button className="line-options" onClick={this.shuffleLineTwo}><TiArrowShuffle/>Shuffle</Button>
+        <Button className="line-options" onClick={this.lockLineTwo}><TiLockClosedOutline/>Lock</Button>
 
-        <h2 className="line2">{lines.line3[this.state.poemLineThree]}</h2><button onClick={this.shuffleLineThree}>< TiArrowShuffle/></button>
-        <button onClick={this.lockLineThree}><TiLockOpenOutline/></button><br /><br />
+        <h2 className="line2">{lines.line3[this.state.poemLineThree]}</h2>
+        <Button className="line-options" onClick={this.shuffleLineThree}>< TiArrowShuffle/>Shuffle</Button>
+        <Button className="line-options" onClick={this.lockLineThree}><TiLockClosedOutline/>Lock</Button><br /><br />
 
-        <button onClick={this.shuffleLines}>
-          <TiStarburstOutline/>
-        </button>
+        <Button className="line-options" onClick={this.shuffleLines}>
+          Shuffle All
+          <TiRefresh/>
+        </Button>
 
       </div>
   )};
