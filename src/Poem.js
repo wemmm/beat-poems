@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, ButtonGroup } from 'react-bootstrap';
 import ShareButton from 'react-social-share-buttons'
 import { TiArrowShuffle, TiRefresh, TiLockClosedOutline } from 'react-icons/lib/ti'
 import lines from './lines.json';
@@ -18,7 +18,7 @@ class Poem extends Component {
   }
 
   randomNumber = () => {
-    return Math.floor(Math.random() * (12 - 0)) + 0;
+    return Math.floor(Math.random() * (13 - 0)) + 0;
   }
 
   shuffleLines = () => {
@@ -94,21 +94,27 @@ class Poem extends Component {
         <p>{this.props.label}</p>
 
         <h2>{lines.line1[this.state.poemLineOne]}</h2>
-        <Button onClick={this.shuffleLineOne}><TiArrowShuffle/>Shuffle</Button>
-        <Button className={(this.state.lineOneLock ? "active" : "")} onClick={this.lockLineOne}><TiLockClosedOutline/>Lock</Button>
+        <ButtonGroup>
+          <Button onClick={this.shuffleLineOne}><TiArrowShuffle/>Shuffle</Button>
+          <Button className={(this.state.lineOneLock ? "active" : "")} onClick={this.lockLineOne}><TiLockClosedOutline/>Lock</Button>
+        </ButtonGroup>
 
         <h2>{lines.line2[this.state.poemLineTwo]}</h2>
-        <Button onClick={this.shuffleLineTwo}><TiArrowShuffle/>Shuffle</Button>
-        <Button className={(this.state.lineTwoLock ? "active" : "")} onClick={this.lockLineTwo}><TiLockClosedOutline/>Lock</Button>
+        <ButtonGroup>
+          <Button onClick={this.shuffleLineTwo}><TiArrowShuffle/>Shuffle</Button>
+          <Button className={(this.state.lineTwoLock ? "active" : "")} onClick={this.lockLineTwo}><TiLockClosedOutline/>Lock</Button>
+        </ButtonGroup>
 
         <h2>{lines.line3[this.state.poemLineThree]}</h2>
-        <Button onClick={this.shuffleLineThree}>< TiArrowShuffle/>Shuffle</Button>
-        <Button className={(this.state.lineThreeLock ? "active" : "")} onClick={this.lockLineThree}><TiLockClosedOutline/>Lock</Button><br /><br />
+        <ButtonGroup>
+          <Button onClick={this.shuffleLineThree}>< TiArrowShuffle/>Shuffle</Button>
+          <Button className={(this.state.lineThreeLock ? "active" : "")} onClick={this.lockLineThree}><TiLockClosedOutline/>Lock</Button>
+        </ButtonGroup><br /><br />
 
         <Button className="shuffleall" onClick={this.shuffleLines}>
           Shuffle All
           <TiRefresh/>
-        </Button><br/><br/>
+        </Button>
 
         <div className="social">
           <ShareButton
