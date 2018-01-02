@@ -5,7 +5,7 @@
 
 I feel like I'm getting into React now so instead of generic calculators and todo lists here's something considerably worse. I had an interesting time mucking about with JSON in [walnut](https://github.com/wemmm/walnut) so I've written up some mock lines of (beat) poetry as a JSON file to see if I can get a poem assembler going.
 
-I've also never web deployed a React app so that should be fun/painful/a great learning experience.
+Now with web deployment!
 
 ### _What?_
 
@@ -19,7 +19,7 @@ So some of the lines in ```lines.json``` are inspired by [Ginsberg](https://en.w
 
 * React.js
 * JavaScript (ES6)
-* create-react-app
+* create-react-app & heroku buildpack
 * react-icons
 * react-social-share-buttons
 
@@ -66,3 +66,9 @@ As a sociable user,
 So other people can enjoy my intriguing poetry,
 I would like to be able to tweet my results.
 ```
+
+### TODOs:
+
+* Add more potential lines of poetry
+* Full bibliography
+* Styling
