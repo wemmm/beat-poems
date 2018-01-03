@@ -18,7 +18,7 @@ class Poem extends Component {
   }
 
   randomNumber = () => {
-    return Math.floor(Math.random() * (13 - 0)) + 0;
+    return Math.floor(Math.random() * 16);
   }
 
   shuffleLines = () => {
