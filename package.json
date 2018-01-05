@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "react": "^16.2.0",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.2.0",
     "react-icons": "^2.2.7",
     "react-scripts": "1.0.17",
     "react-social-share-buttons": "^1.0.2",
+    "react-test-renderer": "^16.2.0",
     "react-twitter-widgets": "^1.7.1"
   },
   "scripts": {

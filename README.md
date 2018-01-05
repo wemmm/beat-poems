@@ -22,6 +22,7 @@ So some of the lines in ```lines.json``` are inspired by [Ginsberg](https://en.w
 * create-react-app & heroku buildpack
 * react-icons
 * react-social-share-buttons
+* Enzyme for testing
 
 ### Structure
 
