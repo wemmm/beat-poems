@@ -28,7 +28,6 @@ class Poem extends Component {
   }
 
   shuffleLineOne = () => {
-    console.log(this.state.lineOneText)
     if (this.state.lineOneLock === false) {
       this.setState({
         poemLineOne: this.randomNumber()
@@ -53,7 +52,7 @@ class Poem extends Component {
   }
 
   lockLineOne = () => {
-    if (this.state.lineOneLock === false) {
+    if (!this.state.lineOneLock) {
       this.setState({
         lineOneLock: true
       });
@@ -65,7 +64,7 @@ class Poem extends Component {
   }
 
   lockLineTwo = () => {
-    if (this.state.lineTwoLock === false) {
+    if (!this.state.lineTwoLock) {
       this.setState({
         lineTwoLock: true
       });
@@ -77,7 +76,7 @@ class Poem extends Component {
   }
 
   lockLineThree = () => {
-    if (this.state.lineThreeLock === false) {
+    if (!this.state.lineThreeLock) {
       this.setState({
         lineThreeLock: true
       });
