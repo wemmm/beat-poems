@@ -15,17 +15,22 @@ it('renders a header passed as a prop', () => {
   expect(wrapper.contains(label)).toEqual(true);
 });
 
-it('renders the first line of a poem', () => {
+it('has space for three lines of poetry', () => {
+  const wrapper = shallow(<Poem />);
+  expect(wrapper.find('h2').length).toBe(3);
+});
+
+it('renders the first line by default', () => {
   const wrapper = shallow(<Poem label="test"/>);
   expect(wrapper.find('h2').at(0).length).not.toBe(0);
 });
 
-it('renders the second line of a poem', () => {
+it('renders the second line by default', () => {
   const wrapper = shallow(<Poem label="test"/>);
   expect(wrapper.find('h2').at(1).length).not.toBe(0);
 });
 
-it('renders the third line of a poem', () => {
+it('renders the third line by default', () => {
   const wrapper = shallow(<Poem label="test"/>);
   expect(wrapper.find('h2').at(2).length).not.toBe(0);
 });
