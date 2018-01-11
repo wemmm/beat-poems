@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, ButtonGroup } from 'react-bootstrap';
+import { Button, ButtonGroup, Grid, Row, Col, Clearfix } from 'react-bootstrap';
 import ShareButton from 'react-social-share-buttons'
 import { TiArrowShuffle, TiRefresh, TiLockClosedOutline } from 'react-icons/lib/ti'
 import lines from './lines.json';
@@ -89,27 +89,45 @@ class Poem extends Component {
 
   render() {
     return (
+     <Grid>
       <div>
         <p>{this.props.label}</p>
 
+      <Col xs={12} md={8}>
         <h2>{lines.line1[this.state.poemLineOne]}</h2>
+      </Col>
+
+      <Col xs={6} md={4}>
         <ButtonGroup>
           <Button onClick={this.shuffleLineOne}><TiArrowShuffle/>Shuffle</Button>
           <Button className={(this.state.lineOneLock ? "active" : "")} onClick={this.lockLineOne}><TiLockClosedOutline/>Lock</Button>
         </ButtonGroup>
+      </Col>
 
+      <Col xs={12} md={8}>
         <h2>{lines.line2[this.state.poemLineTwo]}</h2>
+      </Col>
+
+      <Col xs={6} md={4}>
         <ButtonGroup>
           <Button onClick={this.shuffleLineTwo}><TiArrowShuffle/>Shuffle</Button>
           <Button className={(this.state.lineTwoLock ? "active" : "")} onClick={this.lockLineTwo}><TiLockClosedOutline/>Lock</Button>
         </ButtonGroup>
+      </Col>
 
+      <Col xs={12} md={8}>
         <h2>{lines.line3[this.state.poemLineThree]}</h2>
-        <ButtonGroup>
-          <Button onClick={this.shuffleLineThree}>< TiArrowShuffle/>Shuffle</Button>
-          <Button className={(this.state.lineThreeLock ? "active" : "")} onClick={this.lockLineThree}><TiLockClosedOutline/>Lock</Button>
-        </ButtonGroup><br /><br />
+      </Col>
 
+      <Col xs={6} md={4}>
+        <ButtonGroup>
+          <Button onClick={this.shuffleLineThree}><TiArrowShuffle/>Shuffle</Button>
+          <Button className={(this.state.lineThreeLock ? "active" : "")} onClick={this.lockLineThree}><TiLockClosedOutline/>Lock</Button>
+        </ButtonGroup>
+      </Col>
+
+      <Col xs={12} md={8}>
+        <div className="lowerbuttons">
         <Button className="shuffleall" onClick={this.shuffleLines}>
           Shuffle All
           <TiRefresh/>
@@ -123,8 +141,11 @@ class Poem extends Component {
                   text={`${lines.line1[this.state.poemLineOne]}%0A${lines.line2[this.state.poemLineTwo]}%0A${lines.line3[this.state.poemLineThree]}`}
               />
         </div>
+        </div>
+      </Col>
 
       </div>
+      </Grid>
   )};
 }
 

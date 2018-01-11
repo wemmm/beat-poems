@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, render } from 'enzyme';
 import Poem from './Poem';
-import { Button, ButtonGroup } from 'react-bootstrap';
+import { Button, ButtonGroup, Grid, Row, Col, Clearfix } from 'react-bootstrap';
 import ShareButton from 'react-social-share-buttons'
 import { TiArrowShuffle, TiRefresh, TiLockClosedOutline } from 'react-icons/lib/ti'
 

@@ -15,3 +15,17 @@
 .shuffleall {
   width: 153px;
 }
+
+h2, .btn-group {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.lowerbuttons {
+  margin-top: 20px;
+}
+
+/* * {
+  border-style: solid;
+  border-width: 1px;
+} */
