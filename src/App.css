@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Cutive|Cutive+Mono');
+
 .App {
   margin: 20px;
 }
@@ -16,9 +18,14 @@
   width: 153px;
 }
 
+h1 {
+  font-family: Cutive;
+}
+
 h2, .btn-group {
   margin-top: 10px;
   margin-bottom: 10px;
+  font-family: 'Cutive Mono';
 }
 
 .lowerbuttons {
