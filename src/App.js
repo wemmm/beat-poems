@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Poem from './Poem'
+import Poem from './Poem';
+import Background from './Background';
 import './App.css';
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Beat Poems</h1>
         </header>
+        <Background/>
         <Poem/>
       </div>
     );
