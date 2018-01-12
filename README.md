@@ -73,3 +73,5 @@ I would like to be able to tweet my results.
 * Add more potential lines of poetry
 * Full bibliography
 * Styling
+
+![screenshot](https://github.com/wemmm/beat-poems/blob/master/poems.png)
