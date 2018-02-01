@@ -15,6 +15,8 @@ From [The Poetry Foundation](https://www.poetryfoundation.org/learn/glossary-ter
 
 So some of the lines in ```lines.json``` are inspired by [Ginsberg](https://en.wikipedia.org/wiki/Allen_Ginsberg), [Whalen](https://www.poetryfoundation.org/poets/philip-whalen), [Snyder](https://en.wikipedia.org/wiki/Gary_Snyder) etc. etc. and some of them are weird parodies of my own creation. There's also something a bit [Grim Fandango](https://www.youtube.com/watch?v=8RBEA7Y7EQA) about it.
 
+A proper bibliography is [here](https://github.com/wemmm/beat-poems/blob/master/bibliography.md).
+
 ### Tech
 
 * React.js
@@ -71,7 +73,6 @@ I would like to be able to tweet my results.
 ### TODOs:
 
 * Add more potential lines of poetry
-* Full bibliography
 * Styling
 
 ![screenshot](https://github.com/wemmm/beat-poems/blob/master/poems.png)
