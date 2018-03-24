@@ -32,6 +32,31 @@ h2, .btn-group {
   margin-top: 20px;
 }
 
+button {
+  border: 1px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: darkgray !important;
+}
+
+.active {
+  background-color: darkgray;
+}
+
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: 20px;
+  }
+  .container {
+    text-align: center;
+  }
+  .lowerbuttons {
+    width: 150px;
+    margin: auto;
+    margin-top: 30px;
+  }
+}
+
 /* * {
   border-style: solid;
   border-width: 1px;

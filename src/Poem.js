@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Button, ButtonGroup, Grid, Row, Col, Clearfix } from 'react-bootstrap';
+import { Button, ButtonGroup, Grid, Col } from 'react-bootstrap';
 import ShareButton from 'react-social-share-buttons'
-import { TiArrowShuffle, TiRefresh, TiLockClosedOutline } from 'react-icons/lib/ti'
+import { TiArrowShuffle, TiRefresh, TiLockClosedOutline, TiLockOpenOutline } from 'react-icons/lib/ti'
 import lines from './lines.json';
 
 class Poem extends Component {
@@ -18,7 +18,7 @@ class Poem extends Component {
   }
 
   randomNumber = () => {
-    return Math.floor(Math.random() * 16);
+    return Math.floor(Math.random() * lines.line1.length);
   }
 
   shuffleLines = () => {
@@ -100,7 +100,15 @@ class Poem extends Component {
       <Col xs={6} md={4}>
         <ButtonGroup>
           <Button onClick={this.shuffleLineOne}><TiArrowShuffle/>Shuffle</Button>
-          <Button className={(this.state.lineOneLock ? "active" : "")} onClick={this.lockLineOne}><TiLockClosedOutline/>Lock</Button>
+          <Button
+            className={(this.state.lineOneLock ? "active" : "")}
+            onClick={this.lockLineOne}>
+            {
+              this.state.lineOneLock ?
+              <TiLockClosedOutline/> :
+              <TiLockOpenOutline/>
+            }
+          </Button>
         </ButtonGroup>
       </Col>
 
@@ -111,7 +119,15 @@ class Poem extends Component {
       <Col xs={6} md={4}>
         <ButtonGroup>
           <Button onClick={this.shuffleLineTwo}><TiArrowShuffle/>Shuffle</Button>
-          <Button className={(this.state.lineTwoLock ? "active" : "")} onClick={this.lockLineTwo}><TiLockClosedOutline/>Lock</Button>
+          <Button
+            className={(this.state.lineTwoLock ? "active" : "")}
+            onClick={this.lockLineTwo}>
+            {
+              this.state.lineTwoLock ?
+              <TiLockClosedOutline/> :
+              <TiLockOpenOutline/>
+            }
+          </Button>
         </ButtonGroup>
       </Col>
 
@@ -122,7 +138,15 @@ class Poem extends Component {
       <Col xs={6} md={4}>
         <ButtonGroup>
           <Button onClick={this.shuffleLineThree}><TiArrowShuffle/>Shuffle</Button>
-          <Button className={(this.state.lineThreeLock ? "active" : "")} onClick={this.lockLineThree}><TiLockClosedOutline/>Lock</Button>
+          <Button
+            className={(this.state.lineThreeLock ? "active" : "")}
+            onClick={this.lockLineThree}>
+            {
+              this.state.lineThreeLock ?
+              <TiLockClosedOutline/> :
+              <TiLockOpenOutline/>
+            }
+            </Button>
         </ButtonGroup>
       </Col>
 
